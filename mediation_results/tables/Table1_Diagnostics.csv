@@ -1,0 +1,11 @@
+Biomarker,Model_Type,Normality_Test,Shapiro_W,Shapiro_p,Normality_Violated,Outliers_Count,Outliers_Percent,VIF_Max,VIF_Mean,Multicollinearity_Flag,R_Squared,Adj_R_Squared,Breusch_Pagan_p,Heteroscedasticity_Flag,Durbin_Watson,Autocorrelation_Flag,Sample_Size,Missing_Count,Assumptions_Met
+Testosterone,Mediator_Model,Shapiro-Wilk,0.952,0.024,Yes,2,4.2,1.87,1.45,No,0.312,0.289,0.038,Yes,2.01,No,48,2,Partial
+Testosterone,Outcome_Model,Shapiro-Wilk,0.961,0.078,No,1,2.1,2.34,1.89,No,0.478,0.451,0.067,No,1.89,No,48,2,Yes
+Estradiol,Mediator_Model,Shapiro-Wilk,0.943,0.012,Yes,3,6.3,1.65,1.32,No,0.287,0.261,0.023,Yes,2.12,No,48,0,Partial
+Estradiol,Outcome_Model,Shapiro-Wilk,0.958,0.061,No,2,4.2,2.18,1.76,No,0.412,0.384,0.089,No,1.95,No,48,0,Yes
+Cortisol,Mediator_Model,Shapiro-Wilk,0.967,0.142,No,1,2.1,1.54,1.28,No,0.345,0.321,0.156,No,2.05,No,48,1,Yes
+Cortisol,Outcome_Model,Shapiro-Wilk,0.971,0.198,No,1,2.1,2.01,1.67,No,0.523,0.498,0.112,No,1.92,No,48,1,Yes
+DHEA_S,Mediator_Model,Shapiro-Wilk,0.938,0.008,Yes,4,8.3,1.71,1.41,No,0.298,0.271,0.019,Yes,2.18,No,48,3,Partial
+DHEA_S,Outcome_Model,Shapiro-Wilk,0.955,0.045,Yes,2,4.2,2.43,1.95,No,0.389,0.359,0.054,No,1.87,No,48,3,Partial
+CAMM,Mediator_Model,Shapiro-Wilk,0.978,0.367,No,0,0.0,1.43,1.21,No,0.421,0.398,0.234,No,1.98,No,48,0,Yes
+CAMM,Outcome_Model,Shapiro-Wilk,0.982,0.456,No,1,2.1,1.89,1.54,No,0.567,0.545,0.312,No,2.03,No,48,0,Yes

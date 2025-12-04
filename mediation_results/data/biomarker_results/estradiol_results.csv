@@ -1,0 +1,4 @@
+Biomarker,Effect_Type,Estimate,SE_HC3_Robust,CI_Lower_95,CI_Upper_95,z_value,p_value,Significance,Effect_Size,Proportion_Mediated
+Estradiol,ACME,0.067,0.047,-0.025,0.159,1.426,0.154,ns,Small,0.142
+Estradiol,ACDE,0.405,0.131,0.148,0.662,3.092,0.002,**,Medium,0.858
+Estradiol,Total_Effect,0.472,0.145,0.188,0.756,3.255,0.001,**,Medium,1.000

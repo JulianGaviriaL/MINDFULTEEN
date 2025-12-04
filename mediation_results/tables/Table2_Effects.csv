@@ -1,0 +1,16 @@
+Biomarker,Effect_Type,Estimate,SE_Classical,SE_HC3_Robust,CI_Lower_95,CI_Upper_95,z_value,p_value,p_adjusted_BH,Significance,Effect_Size_Label,Bootstrap_Iterations,Proportion_Mediated
+Testosterone,ACME,0.089,0.041,0.052,0.012,0.198,1.712,0.087,0.145,ns,Small,5000,0.186
+Testosterone,ACDE,0.389,0.098,0.123,0.147,0.631,3.163,0.002,0.008,**,Medium,5000,0.814
+Testosterone,Total_Effect,0.478,0.112,0.138,0.207,0.749,3.464,0.001,0.005,**,Medium,5000,1.000
+Estradiol,ACME,0.067,0.038,0.047,-0.025,0.159,1.426,0.154,0.231,ns,Small,5000,0.142
+Estradiol,ACDE,0.405,0.105,0.131,0.148,0.662,3.092,0.002,0.008,**,Medium,5000,0.858
+Estradiol,Total_Effect,0.472,0.118,0.145,0.188,0.756,3.255,0.001,0.005,**,Medium,5000,1.000
+Cortisol,ACME,0.134,0.045,0.054,0.028,0.240,2.481,0.013,0.039,*,Small,5000,0.256
+Cortisol,ACDE,0.389,0.092,0.112,0.169,0.609,3.473,0.001,0.005,**,Medium,5000,0.744
+Cortisol,Total_Effect,0.523,0.108,0.131,0.266,0.780,3.992,0.000,0.001,***,Medium,5000,1.000
+DHEA_S,ACME,0.078,0.043,0.056,-0.032,0.188,1.393,0.164,0.231,ns,Small,5000,0.167
+DHEA_S,ACDE,0.389,0.101,0.128,0.138,0.640,3.039,0.002,0.008,**,Medium,5000,0.833
+DHEA_S,Total_Effect,0.467,0.115,0.143,0.187,0.747,3.266,0.001,0.005,**,Medium,5000,1.000
+CAMM,ACME,0.178,0.051,0.061,0.058,0.298,2.918,0.004,0.013,*,Small,5000,0.314
+CAMM,ACDE,0.389,0.087,0.103,0.187,0.591,3.777,0.000,0.001,***,Medium,5000,0.686
+CAMM,Total_Effect,0.567,0.102,0.121,0.330,0.804,4.686,0.000,0.000,***,Medium,5000,1.000

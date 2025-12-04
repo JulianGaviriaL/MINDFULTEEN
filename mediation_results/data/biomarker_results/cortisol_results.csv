@@ -1,0 +1,4 @@
+Biomarker,Effect_Type,Estimate,SE_HC3_Robust,CI_Lower_95,CI_Upper_95,z_value,p_value,Significance,Effect_Size,Proportion_Mediated
+Cortisol,ACME,0.134,0.054,0.028,0.240,2.481,0.013,*,Small,0.256
+Cortisol,ACDE,0.389,0.112,0.169,0.609,3.473,0.001,**,Medium,0.744
+Cortisol,Total_Effect,0.523,0.131,0.266,0.780,3.992,0.000,***,Medium,1.000

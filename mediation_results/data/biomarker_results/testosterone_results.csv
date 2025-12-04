@@ -1,0 +1,4 @@
+Biomarker,Effect_Type,Estimate,SE_HC3_Robust,CI_Lower_95,CI_Upper_95,z_value,p_value,Significance,Effect_Size,Proportion_Mediated
+Testosterone,ACME,0.089,0.052,0.012,0.198,1.712,0.087,ns,Small,0.186
+Testosterone,ACDE,0.389,0.123,0.147,0.631,3.163,0.002,**,Medium,0.814
+Testosterone,Total_Effect,0.478,0.138,0.207,0.749,3.464,0.001,**,Medium,1.000

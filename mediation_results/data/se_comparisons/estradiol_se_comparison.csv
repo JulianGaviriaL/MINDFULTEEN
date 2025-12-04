@@ -1,0 +1,4 @@
+Biomarker,Effect_Type,SE_Classical,SE_HC0,SE_HC1,SE_HC2,SE_HC3_Robust,SE_Bootstrap,Recommended_SE,SE_Ratio_HC3_Classical,Heteroscedasticity_Present,Recommendation_Notes
+Estradiol,ACME,0.038,0.041,0.043,0.045,0.047,0.049,HC3,1.237,Yes,HC3 recommended due to heteroscedasticity in mediator model
+Estradiol,ACDE,0.105,0.115,0.120,0.126,0.131,0.135,HC3,1.248,No,HC3 provides robustness for small sample
+Estradiol,Total_Effect,0.118,0.127,0.132,0.139,0.145,0.149,HC3,1.229,Partial,HC3 used for consistency across effects

@@ -1,0 +1,4 @@
+Biomarker,Effect_Type,Estimate,SE_HC3_Robust,CI_Lower_95,CI_Upper_95,z_value,p_value,Significance,Effect_Size,Proportion_Mediated
+CAMM,ACME,0.178,0.061,0.058,0.298,2.918,0.004,*,Small,0.314
+CAMM,ACDE,0.389,0.103,0.187,0.591,3.777,0.000,***,Medium,0.686
+CAMM,Total_Effect,0.567,0.121,0.330,0.804,4.686,0.000,***,Medium,1.000

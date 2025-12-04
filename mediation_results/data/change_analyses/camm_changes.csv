@@ -1,0 +1,4 @@
+Biomarker,Variable,V1_Mean,V1_SD,V2_Mean,V2_SD,Mean_Change,Change_SD,CI_Lower_95_Bootstrap,CI_Upper_95_Bootstrap,t_value,df,p_value,Cohens_d,Effect_Size_Label,Bootstrap_Iterations,N_Pairs
+CAMM,Total_Score,32.4,8.9,38.7,9.2,6.3,5.8,4.6,8.0,7.452,47,0.000,1.086,Large,5000,48
+CAMM,Subscale_Present,16.2,4.8,19.1,5.1,2.9,3.2,2.0,3.8,6.217,47,0.000,0.906,Large,5000,48
+CAMM,Subscale_NonJudge,16.2,5.2,19.6,5.3,3.4,3.8,2.3,4.5,6.140,47,0.000,0.895,Large,5000,48

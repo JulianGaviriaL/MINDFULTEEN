@@ -1,0 +1,3 @@
+Biomarker,Variable,V1_Mean,V1_SD,V2_Mean,V2_SD,Mean_Change,Change_SD,CI_Lower_95_Bootstrap,CI_Upper_95_Bootstrap,t_value,df,p_value,Cohens_d,Effect_Size_Label,Bootstrap_Iterations,N_Pairs
+Testosterone,Concentration_ng_dL,342.5,89.3,318.7,82.1,-23.8,45.2,-38.2,-9.4,-3.612,47,0.001,-0.527,Medium,5000,48
+Testosterone,Log_Transformed,2.512,0.112,2.489,0.109,-0.023,0.089,-0.045,-0.001,-1.771,47,0.083,-0.258,Small,5000,48

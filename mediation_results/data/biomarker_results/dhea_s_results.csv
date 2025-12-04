@@ -1,0 +1,4 @@
+Biomarker,Effect_Type,Estimate,SE_HC3_Robust,CI_Lower_95,CI_Upper_95,z_value,p_value,Significance,Effect_Size,Proportion_Mediated
+DHEA_S,ACME,0.078,0.056,-0.032,0.188,1.393,0.164,ns,Small,0.167
+DHEA_S,ACDE,0.389,0.128,0.138,0.640,3.039,0.002,**,Medium,0.833
+DHEA_S,Total_Effect,0.467,0.143,0.187,0.747,3.266,0.001,**,Medium,1.000
