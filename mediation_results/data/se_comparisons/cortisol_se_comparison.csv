@@ -1,0 +1,4 @@
+Biomarker,Effect_Type,SE_Classical,SE_HC0,SE_HC1,SE_HC2,SE_HC3_Robust,SE_Bootstrap,Recommended_SE,SE_Ratio_HC3_Classical,Heteroscedasticity_Present,Recommendation_Notes
+Cortisol,ACME,0.045,0.048,0.050,0.052,0.054,0.056,HC3,1.200,No,HC3 recommended for consistency despite no heteroscedasticity
+Cortisol,ACDE,0.092,0.099,0.103,0.108,0.112,0.116,HC3,1.217,No,HC3 provides robustness for small sample
+Cortisol,Total_Effect,0.108,0.115,0.120,0.126,0.131,0.135,HC3,1.213,No,HC3 used for consistency across effects

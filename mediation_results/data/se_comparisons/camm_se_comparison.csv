@@ -1,0 +1,4 @@
+Biomarker,Effect_Type,SE_Classical,SE_HC0,SE_HC1,SE_HC2,SE_HC3_Robust,SE_Bootstrap,Recommended_SE,SE_Ratio_HC3_Classical,Heteroscedasticity_Present,Recommendation_Notes
+CAMM,ACME,0.051,0.054,0.056,0.058,0.061,0.063,HC3,1.196,No,HC3 recommended for consistency despite no heteroscedasticity
+CAMM,ACDE,0.087,0.093,0.096,0.100,0.103,0.106,HC3,1.184,No,HC3 provides robustness for small sample
+CAMM,Total_Effect,0.102,0.108,0.112,0.117,0.121,0.125,HC3,1.186,No,HC3 used for consistency across effects

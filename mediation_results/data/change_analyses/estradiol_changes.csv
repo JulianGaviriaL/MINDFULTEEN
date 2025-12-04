@@ -1,0 +1,3 @@
+Biomarker,Variable,V1_Mean,V1_SD,V2_Mean,V2_SD,Mean_Change,Change_SD,CI_Lower_95_Bootstrap,CI_Upper_95_Bootstrap,t_value,df,p_value,Cohens_d,Effect_Size_Label,Bootstrap_Iterations,N_Pairs
+Estradiol,Concentration_pg_mL,28.4,12.7,25.1,11.2,-3.3,8.9,-5.9,-0.7,-2.543,47,0.014,-0.371,Small,5000,48
+Estradiol,Log_Transformed,1.421,0.189,1.378,0.183,-0.043,0.134,-0.082,-0.004,-2.201,47,0.033,-0.321,Small,5000,48

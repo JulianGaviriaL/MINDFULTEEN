@@ -1,0 +1,4 @@
+Biomarker,Effect_Type,SE_Classical,SE_HC0,SE_HC1,SE_HC2,SE_HC3_Robust,SE_Bootstrap,Recommended_SE,SE_Ratio_HC3_Classical,Heteroscedasticity_Present,Recommendation_Notes
+DHEA_S,ACME,0.043,0.048,0.050,0.053,0.056,0.058,HC3,1.302,Yes,HC3 recommended due to heteroscedasticity in mediator model
+DHEA_S,ACDE,0.101,0.112,0.117,0.123,0.128,0.132,HC3,1.267,No,HC3 provides robustness for small sample
+DHEA_S,Total_Effect,0.115,0.125,0.131,0.137,0.143,0.148,HC3,1.243,Partial,HC3 used for consistency across effects

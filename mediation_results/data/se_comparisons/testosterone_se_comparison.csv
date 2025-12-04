@@ -1,0 +1,4 @@
+Biomarker,Effect_Type,SE_Classical,SE_HC0,SE_HC1,SE_HC2,SE_HC3_Robust,SE_Bootstrap,Recommended_SE,SE_Ratio_HC3_Classical,Heteroscedasticity_Present,Recommendation_Notes
+Testosterone,ACME,0.041,0.045,0.047,0.049,0.052,0.054,HC3,1.268,Yes,HC3 recommended due to heteroscedasticity in mediator model
+Testosterone,ACDE,0.098,0.108,0.112,0.118,0.123,0.127,HC3,1.255,No,HC3 provides robustness for small sample
+Testosterone,Total_Effect,0.112,0.121,0.126,0.132,0.138,0.142,HC3,1.232,Partial,HC3 used for consistency across effects

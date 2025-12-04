@@ -1,0 +1,12 @@
+Biomarker,Variable,V1_Mean,V1_SD,V2_Mean,V2_SD,Mean_Change,Change_SD,CI_Lower_95_Bootstrap,CI_Upper_95_Bootstrap,t_value,df,p_value,Cohens_d,Effect_Size_Label,Bootstrap_Iterations,N_Pairs
+Testosterone,Concentration_ng_dL,342.5,89.3,318.7,82.1,-23.8,45.2,-38.2,-9.4,-3.612,47,0.001,-0.527,Medium,5000,48
+Testosterone,Log_Transformed,2.512,0.112,2.489,0.109,-0.023,0.089,-0.045,-0.001,-1.771,47,0.083,-0.258,Small,5000,48
+Estradiol,Concentration_pg_mL,28.4,12.7,25.1,11.2,-3.3,8.9,-5.9,-0.7,-2.543,47,0.014,-0.371,Small,5000,48
+Estradiol,Log_Transformed,1.421,0.189,1.378,0.183,-0.043,0.134,-0.082,-0.004,-2.201,47,0.033,-0.321,Small,5000,48
+Cortisol,Concentration_ug_dL,12.8,4.5,10.2,3.9,-2.6,3.1,-3.5,-1.7,-5.751,47,0.000,-0.839,Large,5000,48
+Cortisol,Log_Transformed,1.089,0.156,1.001,0.149,-0.088,0.098,-0.116,-0.060,-6.159,47,0.000,-0.897,Large,5000,48
+DHEA_S,Concentration_ug_dL,245.3,78.9,231.4,72.3,-13.9,52.1,-28.9,1.1,-1.831,44,0.074,-0.279,Small,5000,45
+DHEA_S,Log_Transformed,2.378,0.145,2.351,0.138,-0.027,0.112,-0.059,0.005,-1.654,44,0.105,-0.252,Small,5000,45
+CAMM,Total_Score,32.4,8.9,38.7,9.2,6.3,5.8,4.6,8.0,7.452,47,0.000,1.086,Large,5000,48
+CAMM,Subscale_Present,16.2,4.8,19.1,5.1,2.9,3.2,2.0,3.8,6.217,47,0.000,0.906,Large,5000,48
+CAMM,Subscale_NonJudge,16.2,5.2,19.6,5.3,3.4,3.8,2.3,4.5,6.140,47,0.000,0.895,Large,5000,48

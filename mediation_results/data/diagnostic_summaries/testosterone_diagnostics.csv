@@ -1,0 +1,3 @@
+Biomarker,Model_Type,Normality_Test,Shapiro_W,Shapiro_p,Normality_Violated,Outliers_Count,Outliers_Percent,VIF_Max,VIF_Mean,Multicollinearity_Flag,R_Squared,Adj_R_Squared,Breusch_Pagan_p,Heteroscedasticity_Flag,Durbin_Watson,Autocorrelation_Flag,Sample_Size,Missing_Count,Assumptions_Met
+Testosterone,Mediator_Model,Shapiro-Wilk,0.952,0.024,Yes,2,4.2,1.87,1.45,No,0.312,0.289,0.038,Yes,2.01,No,48,2,Partial
+Testosterone,Outcome_Model,Shapiro-Wilk,0.961,0.078,No,1,2.1,2.34,1.89,No,0.478,0.451,0.067,No,1.89,No,48,2,Yes
