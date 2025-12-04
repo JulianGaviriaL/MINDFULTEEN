@@ -7,7 +7,7 @@ This module provides utilities for uploading and validating research data files.
 import os
 import shutil
 from pathlib import Path
-from typing import Optional, List
+from typing import Optional, List, Tuple
 
 
 class FileUploader:
@@ -54,7 +54,7 @@ class FileUploader:
         """Create the upload directory if it doesn't exist."""
         self.upload_dir.mkdir(parents=True, exist_ok=True)
         
-    def validate_file(self, filepath: str) -> tuple[bool, str]:
+    def validate_file(self, filepath: str) -> Tuple[bool, str]:
         """
         Validate a file before upload.
         
@@ -86,7 +86,7 @@ class FileUploader:
         
         return True, "File is valid"
     
-    def upload(self, source_path: str, destination_name: Optional[str] = None) -> tuple[bool, str]:
+    def upload(self, source_path: str, destination_name: Optional[str] = None) -> Tuple[bool, str]:
         """
         Upload a file to the upload directory.
         
@@ -111,8 +111,14 @@ class FileUploader:
         
         # Handle existing files
         if destination.exists():
-            base = destination.stem
-            suffix = destination.suffix
+            # Handle double extensions like .nii.gz
+            name = destination.name
+            if name.endswith('.nii.gz'):
+                base = name[:-7]  # Remove .nii.gz
+                suffix = '.nii.gz'
+            else:
+                base = destination.stem
+                suffix = destination.suffix
             counter = 1
             while destination.exists():
                 destination = self.upload_dir / f"{base}_{counter}{suffix}"
@@ -136,7 +142,7 @@ class FileUploader:
         
         return [f.name for f in self.upload_dir.iterdir() if f.is_file()]
     
-    def delete(self, filename: str) -> tuple[bool, str]:
+    def delete(self, filename: str) -> Tuple[bool, str]:
         """
         Delete an uploaded file.
         
