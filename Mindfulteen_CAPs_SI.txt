@@ -1,0 +1,547 @@
+Supplementary information
+
+Mindfulness training alters brain network dynamics and decouples brain-symptom associations in young adolescents.
+
+
+AuthorsJulian Gaviria *a, b, c, d. ORCID ID: 0000-0002-4266-1371
+Zeynep Celen d. ORCID ID: 0000-0000-0002-1227-6587
+Zoé Schilliger h, i ORCID ID:  0000-0003-2327-869X
+Mariana Magnus Smithj  ORCID ID: 0000-0001-9756-3472
+Soraya Brosset e. ORCID ID: 0000-0003-1449-442X
+Lucas Peek e. ORCID ID: 0009-0007-6016-9317
+Patrik Vuilleumier  e. ORCID ID: 0000-0002-8198-9214
+Dimitri Van De Ville f, g. ORCID ID: 0000-0002-2879-3861
+Arnaud Merglenj  ORCID ID: 0000-0001-5654-8428
+Paul Klauser h, i  ORCID ID:  0000-0003-0284-4947
+Camille Piguet d. ORCID ID: 0000-0002-8198-9214
+
+a Department of Psychiatry,  b Amsterdam Neuroscience, Amsterdam UMC;  c Vrije Universiteit, Amsterdam. The Netherlands. d Department of Psychiatry;  e Laboratory for Behavioral Neurology and Imaging of Cognition, department of Basic Neurosciences; f department of radiology and medical informatics, University of Geneva. Switzerland; gMedical Image Processing Lab, Neuro-X Institute, Ecole polytechnique fédérale de Lausanne (EPFL). Switzerland; hCenter for psychiatric neuroscience, Department of psychiatry, Lausanne university hospital and University of Lausanne, Lausanne, Switzerland;  iDivision of child and adolescent psychiatry, Department of psychiatry, Lausanne university hospital and University of Lausanne, Lausanne, Switzerland; j  Division of General Pediatrics, Geneva University Hospitals and Faculty of Medicine, Geneva, Switzerland*CorrespondenceJulian Gaviria.  E-mail: jualgalo@gmail.com;KeywordsBrain networks; mindfulness; dynamic functional connectivity (dFC); depression; stress; adolescents; anxiety, stress
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contents
+
+Supplementary methods	4
+FMRI data acquisition	4
+Preprocessing for co-activation pattern (CAP) analysis	4
+FMRI Task	4
+Linear mixed modelling	5
+Extended Mediation Analysis Methods	5
+Hormonal data acquisition.	5
+Rationale for Hybrid Mediation Approach.	5
+Effect Size Measures	6
+Robust Standard Errors	6
+Sensitivity Analysis Protocol	6
+Model Diagnostics	6
+Supplementary Figures	7
+Supplementary Tables	11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Supplementary methods
+FMRI data acquisition
+Neuroimaging data were collected using a 3T Magnetom TIM Trio scanner (Siemens, Germany) at the Brain and Behavior Laboratory  of the University of Geneva (Switzerland).  We used a 32-channel head-coil. Dynamic functional connectivity of the resting state was computed from Blood Oxygenation Level Dependent (BOLD) contrast from a T2*-weighted echo-planar sequence (EPI). 2160 functional volumes (1080 per visit) of 60 axial slices each (TR/TE/flip angle = 2100ms/25ms/60°, FOV=212 mm, resolution=106×106, isotropic voxels of 2 mm3, distance factor 10%) were acquired. Furthermore, we collected a high-resolution T1-weighted anatomical image [TR/TI/TE/flip angle=1900ms/900ms/2.27ms/9°, FOV=256mm, resolution=256×256, slice thickness=1mm3, 192 sagittal slices, phase encoding direction= Anterior-Posterior (AP). Our multiband sequence included 4 dummy scans (~ 5s) at the beginning of the fMRI scanning.
+
+Preprocessing for co-activation pattern (CAP) analysis 
+Following Bolton et al.,(Bolton et al., 2020) standard image preprocessing procedures were applied using the DPABI toolbox(Yan, Wang and Lu, 2021). Time-series from each voxel in the white matter and cerebrospinal fluid, plus the six affine motion parameters from realignment (also including their respective first-order derivatives), were used as nuisance variables to be regressed out from the data. No global signal regression (GSR) was carried out given the absence of agreement in the field in this regard(Murphy and Fox, 2017). Although some studies support this approach(Zhang et al., 2020; Li et al., 2021), others suggest that GSR does not affect the CAP extraction procedure(Liu and Duyn, 2013) nor measures of anticorrelation among intrinsic functional brain networks(Huang et al., 2020).  Furthermore, the data were band-pass filtered between 0.01 and 0.10 Hz.  All image volumes with frame-wise displacement above 0.5 mm were discarded, as well as subjects with more than 30% of scrubbed frames(Power et al., 2014). 
+
+FMRI Task
+The task was presented in two sessions, with 6 runs in each session. The order of the runs was pseudorandomized into 6 lists. The experimental runs consisted of an information screen (5sec) signaling the session will be evaluated; followed by a series of 5 time-limited challenging mental calculations, followed by positive or negative feedback with a social ranking (high for positive, low for negative) last lasted for 8 sec. After the feedback, participants had a 90 sec recovery period (i.e., resting state), where an information screen for 5 sec was presented which instructed the participants to close eyes and rest, then the screen turned black for 85 sec. Participants were signaled the end of the rest period by 2 flashes of light and a sound. There were 8 experimental runs, and 4 control runs where the information screen signaled the session will not be evaluated, the calculations were simple, and the feedback screen had a neutral feedback with no ranking. The recovery period information screen and time was the same for all runs.  The whole task lasted around 25 minutes. The participants’ eye movements were observed during the experiment to make sure they closed their eyes during the recovery period.
+Linear mixed modelling
+We performed a 2 × 2 x 3 LMM-based factorial analyses denoted by the following R-based formula syntax:
+ entries ? group * measurement * condition +(1 |subject ),
+where the ?xed factor “group” comprised two levels corresponding to assigned cohorts in the randomization (i.e., “treatment” and “control”). The second fixed factor “measurement” included the measurements recorded in relation to the MBI mindfulness intervention (i.e., “pre” and “post”). The fixed factor “condition” comprised the type of feedback in the MIST task preceding the resting periods (i.e., “neutral”, “negative”, and “positive”). Individual participants (i.e. “subject”) were modeled as a random factor, and the “entries” were the dependent variable, computed for each CAP. Preliminary inspections of the models examined the compliance with the assumptions for linear regressions in terms of influential observations (i.e., outliers), homogeneity of variance, normality of residual, and collinearity. Additionally, posterior predictive checks assessed the consistency between the maximum likelihood parameter estimation (MLE) and the empirical data.
+
+Extended Mediation Analysis Methods
+Hormonal data acquisition. 
+Complete information on blood collection, storage and analysis are provided in (Schilliger et al., 2024). Blood was collected in a neutral tube within seven days before or after the MRI, in the morning after an overnight fast. Steroids, including testosterone, estradiol, cortisol and 11-deoxycortisol were measured in the serum by liquid chromatography-tandem mass spectrometry (LC-MS/MS) in the laboratory of Clinical Chemistry of the Lausanne University Hospital.
+Extended Mediation Analysis Methods. Hormonal Mediators. Four pubertal hormones were tested as mediators: DHEA-S (dehydroepiandrosterone sulfate): Adrenal androgen marking adrenarche; neuroprotective and stress-modulating properties. Cortisol: HPA axis glucocorticoid; stress response and pubertal development. Testosterone: Androgenic hormone; stress reactivity, mood, neurodevelopment. Estradiol: Estrogenic hormone; neurotrophic and mood-regulating effects.
+
+Rationale for Hybrid Mediation Approach. Why not mixed-effects mediation models?
+Mixed-effects models with CAP × time interactions estimate conditional indirect effects:
+(?E[Y|X,M,"time" =0])/?X
+These pool information across visits and return marginal effects at a covariate-set baseline, not the observed effect in the actual baseline sample. Our research question targets the absolute (unconditional) mediation effect at each visit:
+"ACME"(V_1)=E[Y(M(X=1))-Y(M(X=0))?"visit"=V_1]
+
+This represents the average mediated difference among participants at that specific visit (Imai et al., 2013).
+Hybrid solution:
+1. Independent models at each timepoint yield visit-specific ACMEs (descriptive statistics)
+2. Cluster bootstrap on paired changes (?ACME) provides valid longitudinal inference
+3. Maximizes power: all data for cross-sectional estimates; paired data (89% retention) for change tests
+
+Effect Size Measures
+* ACME (Average Causal Mediation Effect): Unstandardized indirect effect in original units
+* CSIE (Completely Standardized Indirect Effect): All variables (X, M, Y) standardized; facilitates cross-mediator and cross-outcome comparisons
+
+Robust Standard Errors
+Given sample size (n < 70 per group) and heteroscedasticity detected in diagnostic analyses, we used HC2 heteroscedasticity-consistent standard errors (sandwich estimator). It provides optimal balance between efficiency, robustness in the presence of heteroscedasticity, and valid inference when residual variance is non-constant.
+Sensitivity Analysis Protocol
+Unmeasured confounding was assessed by systematically varying rho (residual correlation between mediator and outcome models):
+* Range: rho ? [?1, +1] in 0.05 increments
+* Baseline: rho_original = 0 (no unmeasured confounding)
+* Critical value: rho_critical where 95% CI for indirect effect crosses zero
+* Interpretation: Larger |rho_critical| indicates greater robustness to unmeasured confounding
+Model Diagnostics
+For all regression models underlying mediation:
+* Linearity: Residual vs. fitted plots
+* Normality: Shapiro-Wilk tests
+* Homoscedasticity: Breusch-Pagan tests
+* Multicollinearity: Variance Inflation Factors (VIF)
+* Influential observations: Cook's distance
+
+
+
+
+
+
+
+
+
+
+
+Supplementary Figures
+
+
+FigureS1. Brain maps depict the five co-activation patterns derived from the bilateral med frontal gyri (MFG). A. The spatial maps of each CAP are illustrated with a threshold of [z > 1.7 (p<.05); purple color code]. Results of the inferential statistics on the entry rates of these MFG-based CAPs are described in Table S1. 
+
+
+
+
+
+
+
+
+
+
+FigureS2. Brain maps depict the five co-activation patterns derived from the bilateral med frontal gyri (MFG). A. The spatial maps of each CAP are illustrated with a threshold of [z > 1.7 (p<.05); purple color code]. Results of the inferential statistics on the entry rates of these MFG-based CAPs are described in Table S1. 
+
+
+
+
+
+
+
+
+
+
+
+Figure S3. Model integrity assessments. The multilevel linear mixed models (LMM) implemented to examine the temporal fluctuation of co-activation patterns (CAPs) derived from the posterior cingulate (i.e., PCC) region of interest (i.e., ROI) yielded adequate of goodness-of-fit across groups (i.e., “treatment” and “control”) and measurements (i.e., “pre” and “post” mindfulness-based intervention). A. CAP1DN-DM reported the best performance compared to further CAPs. A quantitative ranking of our model performance (%) is described in Table S2. B. Posterior predictive checks yielded consistency between the maximum likelihood parameter estimation (MLE) and the empirical data from CAP1DN-DM (i.e., the entry rates). Furthermore, the inspection of influential observations [i.e., outliers (C)], normality of residuals [i.e, normal distribution (D)], collinearity among predictors (E), and the homogeneity of variance [i.e., homoscedasticity (F)] confirmed an optimal estimation of the modelled parameters for the models. As a representative sample, Evaluation of CAP1DN-DM is represented here.
+
+Figure S4. Non-parametric Spearman associations (RHO) between brain activity and clinical scores. The clinical scores portraying depression and anxiety status of our participants  included the State-Trait Anxiety Inventory for Children (STAI-T, STAI-S); the level of depressive symptoms was assessed by the Beck Depression Inventory (BDI) and the Depression and Anxiety Stress Scale (DASS). Y-axis in matrices. These self-reports were screened before (i.e., “pre” measurement) and following the mindfulness intervention (i.e., “post” measurement) respectively. The brain activity was represented by the entry rates of CAPs with greater response to the mindfulness-based intervention: CAP1DN-DM, CAP2DN-MT, and CAP3FPN (x-axis in matrices). The brain CAPs were recorded following the MIST stimuli with neutral (A), negative (B), and positive feedback (C) respectively. None of the correlations reported significantly strong magnitude. 
+
+Supplementary Tables
+OutcomeGroup × VisitSignificance Effect Statistics?P (95% CI)Cohen’s d?²pBEHAVIORBDI0.110.58 (-0.19, 0.40)0.120.000STAI_T-0.140.49 (-0.43, 0.17)-0.140.010STAI_S0.350.18 (-0.05, 0.75)0.340.030DASS_D0.020.93 (-0.25, 0.3)0.020.000DASS_A-0.070.72 (-0.35, 0.22)-0.070.000DASS_S0.240.26 (-0.08, 0.56)0.230.020CAMM0.120.53 (-0.17, 0.4)0.130.010HORMONESDHEA-S-0.100.30 (-0.24, 0.05)-0.100.015Testosterone0.090.67 (-0.23, 0.40)0.090.002Progesterone-0.180.43 (-0.54, 0.16)-0.180.013Estradiol-0.060.85 (-0.51, 0.41)-0.060.001Cortisol0.150.40 (-0.12, 0.42)0.150.01011doc-0.080.74 (-0.45, 0.27)-0.090.002Cort-11doc0.020.93 (-0.29, 0.37)0.020.000BRAIN ROI
+PCCCAP1DN-DM-0.390.05 (-0.70, -0.10)-0.510.060CAP2DN-MT-0.330.06 (-0.60, -0.07)-0.470.060CAP3FPN-0.350.07 (-0.65, -0.06)-0.480.050CAP4VIS0.010.95, (-0.29, 0.32)0.020.000CAP5SN0.070.77 (-0.27, 0.40)0.090.000BRAIN ROI
+MFGCAP1-0.160.29 (-1.57, 0.46)-0.090.018CAP2-0.010.98 (-0.93, 0.90)-0.010.000CAP3-0.160.33 (-1.36, 0.45)-0.250.016CAP4-0.360.30 (-1.02, 0.31)-0.260.017CAP50.280.37 (-0.45, 1.22)0.250.013BRAIN ROI
+IFGCAP1-0.180.27 (-1.32, 0.36)-0.170.019CAP2-0.050.89 (-0.71, 0.62)-0.040.000CAP3-0.280.50 (-1.11, 0.54)-0.180.007CAP40.270.48 (-0.48, 1.02)0.190.008CAP5-0.520.22 (-1.35, 0.30)-0.330.024
+Table S1. GROUP × VISIT Interaction Effects for Behavioral, Hormonal, and Brain Coactivation Patterns. ? = interaction coefficient from linear mixed models; p = p-value from Type II ANOVA; 95% CI = bootstrap confidence interval (5,000 iterations); Cohen's d = ? / pooled baseline SD; ?²p = partial eta squared. Random intercepts included for subjects (behavioral, hormonal, and brain ROIs N = 67 ). BDI = Beck Depression Inventory; STAI-T/S = State-Trait Anxiety Inventory (Trait/State); DASS-D/A/S = Depression Anxiety Stress Scale (Depression/Anxiety/Stress); CAMM = Child & Adolescent Mindfulness Measure; PCC/MFG/IFG = posterior cingulate cortex/middle frontal gyrus/inferior frontal gyrus co-activation patterns (CAPs) averaged across emotional conditions. 
+
+
+
+
+
+
+
+Brain ROIOutcomeF (num, denom)P?²pCohen’s dPCCCAP1DN-DM0.72 (2, 300)0.490.000.08CAP2DN-MT0.20 (2, 300)0.820.000.08CAP3FPN0.73 (2, 300)0.480.000.07CAP4VIS1.80 (2, 300)0.170.010.00CAP5SN0.59 (2, 300)0.550.000.09MFGCAP10.17 (2, 310)0.850.000.05CAP22.07 (2, 310)0.130.020.29CAP31.11 (2, 310)0.330.010.20CAP41.21 (2, 310)0.290.010.20CAP50.83 (2, 310)0.440.010.20IFGCAP10.38 (2, 310)0.680.000.12CAP22.22 (2, 310)0.100.020.29CAP31.62 (2, 310)0.200.010.20CAP40.44 (2, 310)0.640.000.02CAP50.06 (2, 310)0.940.000.01
+Table S2. Three-Way Interaction Effects (GROUP × VISIT × CONDITION) for Brain Co-Activation Patterns.  F (num, denom) = F-statistic with numerator and denominator degrees of freedom; p = Type II ANOVA p-value; ?²p = partial eta squared. Cohen's d = ? / pooled baseline SD. Random intercepts included for subjects (N = 66 PCC, N = 64 MFG/IFG). PCC = posterior cingulate cortex; MFG = middle frontal gyrus; IFG = inferior frontal gyrus. CAP subscripts indicate primary activation clusters (DM = default mode network, AT = attention network, FPN = frontoparietal network, TS = task switching, SN = salience network). No interactions reached significance (p < . 05).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Table S3. Brain regions contributing to CAP1DN-DM. Peak MNI coordinates at z > 1.7 (p<.05) across all participants are reported for all regions. The names of the regions follow the Automated Anatomical Labelling Atlas 3 (AAL).
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Table S4. Brain regions contributing to CAPDN-MT. Peak MNI coordinates at z > 1.7 (p<.05) across all participants are reported for all regions. The names of the regions follow the Automated Anatomical Labelling Atlas 3 (AAL).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Table S5. Brain regions contributing to CAPFPN. Peak MNI coordinates at z > 1.7 (p<.05) across all participants are reported for all regions. The names of the regions follow the Automated Anatomical Labelling Atlas 3 (AAL).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CAP4VIS
+
+Table S6. Brain regions contributing to CAP4VIS. Peak MNI coordinates at z > 1.7 (p<.05) across all participants are reported for all regions. The names of the regions follow the Automated Anatomical Labelling Atlas 3 (AAL).
+
+
+
+
+
+
+
+
+
+CAP5SN
+
+Table S7. Brain regions contributing to CAP5SN. Peak MNI coordinates at z > 1.7 (p<.05) across all participants are reported for all regions. The names of the regions follow the Automated Anatomical Labelling Atlas 3 (AAL).
+
+
+
+
+
+
+
+
+
+CAPClinical?RHOSteiger ZSteiger PMBI
+CAP1DM-DNBDI-0.46-2.590.019STAI_T-0.50-2.210.027STAI_S-0.40-1.560.118DASS_S-0.45-1.80.072MBI
+CAP2DM-MTBDI0.040.180.855STAI_T-0.10-0.460.648STAI_S0.020.070.942DASS_S-0.02-0.110.916MBI
+CAP3FPNBDI0.100.450.651STAI_T0.100.470.642STAI_S0.080.290.774DASS_S0.251.000.315CTR
+CAP1DM-DNBDI0.20.880.381STAI_T0.381.650.099STAI_S0.140.590.558DASS_S0.291.260.208CTR
+CAP2DM-MTBDI0.31.370.169STAI_T0.010.040.967STAI_S0.060.260.793DASS_S0.210.960.338CTR
+CAP3FPNBDI0.090.370.711STAI_T-0.05-0.220.828STAI_S-0.25-0.990.321DASS_S-0.11-0.480.634
+
+Table S8. Changes in Brain-Symptom Correlations fromV1 to V2 (Steiger's Z-test for Dependent Correlations). ?RHO = change in Spearman correlation coefficient (V2 - V1); Steiger Z = test statistic accounting for paired (dependent) correlations; Steiger P = p-value. MBI CAP1DM-DN showed significant decreases in correlations with BDI (p = .019) and STAI-T (p = .027). No significant changes for other CAPs or CTR group (all p > .05). BDI = Beck Depression Inventory; STAI-T/S = State-Trait Anxiety Inventory (Trait/State); DASS-S = Depression Anxiety Stress Scale (Stress subscale). MBI = mindfulness-based intervention group (N = 24-25); CTR = waitlist control group (N = 33-34).
+
+
+
+
+
+
+
+
+
+
+
+NormalityHeteroscedasticityVIFR²OutcomeGroupVisitP (Path A)P (Path B)P (Path A)P (Path B)MaxPath APath BBDIEarlyV10. 0520.0040.1620.0011.070.070.54EarlyV20.103<0.0010.8090.0931.000.000.43WaitV1<0.0010. 0060.9950.0431.010.010.35WaitV20.030<0.001<0.001<0.0011. 060.050.57STAI – TEarlyV10.050.210.160.241.070.070.55EarlyV20.100.010.811.001.000.000.67WaitV10.000.061.000.011.010.010.19WaitV20.030.000.000.041.060.050.48
+Table S9. Stage 1 mediation analyses. Model Diagnostics for CAP1DN-DM ? CAMM ? Clinical Outcomes. Diagnostics assessed violations of normality (Shapiro-Wilk test, p < 0.05) and heteroscedasticity (Breusch-Pagan test, p < 0.05) in path models.  Path A represents the mediator model (CAP1DN-DM ? CAMM); Path B represents the outcome model (CAMM ? Response, controlling for CAP1DN-DM). Four clinical outcomes were tested: depression (BDI), stress (DASS-D), trait anxiety (STAI-T), and state anxiety (STAI-S). Violations were observed in approximately half of the models, particularly for Path B (outcome models). To address these violations, all path coefficient standard errors were computed using heteroscedasticity-consistent (HC3) robust estimators (Long & Ervin, 2000), and bootstrap confidence intervals (5,000 iterations) were used for all indirect effects, ensuring validity of all reported effects.  Variance Inflation Factors (VIF) ranged from 1.00 to 1.08 across all models, indicating no multicollinearity concerns (all VIF < 2.0). R² values indicate the proportion of variance explained by each path model.  Abbreviations: CAP1DN-DM = Dorsal-medial default mode coactivation pattern; CAMM = Child and Adolescent Mindfulness Measure; BDI = Beck Depression Inventory; DASS-D = Depression Anxiety Stress Scale - Stress subscale; STAI-T = State-Trait Anxiety Inventory - Trait; STAI-S = State-Trait Anxiety Inventory - State; VIF = Variance Inflation Factor; R² Path A = variance explained in mediator (CAMM) by predictor (CAP1DN-DM); R² Path B = variance explained in outcome by predictor and mediator (CAP1DN-DM + CAMM).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ACMEPATH aPATH bOutcomeGroupVisit?CILOWCIUPPCSIE?SEP?SEPBDIEarly V10.260.030.740.040.26-0.350.100.04-0.720.06<0.01Early V2-0.07-0.610.350.64-0.070.110.140.65-0.590.08<0.01Wait V10.04-0.110.160.620.04-0.110.100.60-0.380.100.04Wait V20.09-0.130.300.410.09-0.140.110.37-0.680.13<0.01STAI – T EarlyV10.230.020.450.040.23-0.350.100.04-0.660.070.00EarlyV2-0.09-0.470.290.64-0.090.110.140.65-0.770.050.00WaitV10.02-0.090.140.770.02-0.110.100.60-0.170.110.42WaitV20.08-0.110.280.410.08-0.140.110.37-0.570.100.00
+Table S10. Mediation effects for CAP1DN-DM ? CAMM ? Clinical Outcomes. Path a represents the effect between brain CAP1DN-DM and mindfulness trait (CAMM); Path b represents the effect of CAMM scores on clinical outcomes controlling for CAP1DN-DM. Four clinical outcomes were tested: depression (BDI), DASS-D, trait (STAI-T), and state anxiety (STAI-S). Completely Standardized Indirect Effects (CSIE; Preacher & Kelley, 2011) enable cross-outcome comparison:  trivial < 0.01, small = 0.01-0.09, medium = 0.09-0.25, large > 0.25. Path coefficient standard errors computed using heteroscedasticity-consistent (HC3) estimators (Long & Ervin, 2000) to address violations documented in diagnostics (Table S8). Bootstrap confidence intervals are distribution-free and do not assume normality. Abbreviations: ACME= Average Causal Mediation Effect (unstandardized indirect effect); ? = regression coefficient; CI = confidence interval; CSIE = Completely Standardized Indirect Effect; SE = standard error (HC3-corrected); p = HC3 robust p-value for path coefficients, bootstrap p-value for ACME; CAP1DN-DM = Dorsal-medial default mode CAP; BDI = Beck Depression Inventory; CAMM = Child and Adolescent Mindfulness Measure; DASS-D = Depression Anxiety Stress Scale - Stress subscale; STAI-T = State-Trait Anxiety Inventory - Trait; STAI-S = State-Trait Anxiety Inventory - State. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ACDETOTALOutcomeGroupVisit?CILOWCIUPPP ?CILOWCIUPPPBDIEarlyV10.02-0.250.310.92 0.270.01-0.720.11EarlyV2-0.02-0.120.220.89 -0.090.69-0.650.72WaitV1-0.21-0.060.140.18 -0.170.46-0.590.39WaitV20.01-0.110.440.31 0.090.04-0.720.66STAI-TEarlyV10.16-0.140.300.310.390.100.530.03EarlyV2-0.13-0.150.170.15-0.22-0.210.260.25WaitV1-0.25-0.360.120.19-0.23-0.330.020.21WaitV20.11-0.140.260.440.19-0.040.500.37
+Table S11. Mediation Analyses. Direct and total effects for CAP1DN-DM ? CAMM ? Clinical outcomes. All confidence intervals computed via bias-corrected bootstrap (5,000 iterations), robust to violations of normality documented in Table S8. Standard errors for path coefficients computed using HC3 heteroscedasticity-consistent estimators (Long & Ervin, 2000). Abbreviations: ACDE = Average Causal Direct Effect (direct effect controlling for mediator); ? = unstandardized regression coefficient; CI = 95% confidence interval (bootstrap); p = bootstrap p-value; CAP1DN-DM = Dorsal-medial default mode CAP; BDI = Beck Depression Inventory; DASS-D = Depression Anxiety Stress Scale - Depression subscale; STAI-T = State-Trait Anxiety Inventory - Trait; STAI-S = State-Trait Anxiety Inventory - State.  Total effect = c path (X ? Y); Direct effect = c' path (X ? Y controlling for M).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ACMERHOOutcomeGroupVisit?CILOWCIUPPCSIEThresholdCriticalRobustnessBDIEarly V10.250.030.740.040.25-0.70-0.80HighEarly V2-0.07-0.610.350.64-0.07-0.65-0.95HighWait V10.04-0.110.160.620.04-0.60-0.95HighWait V20.09-0.130.300.410.09-0.70-0.95HighSTAI – T Early V10.230.020.450.040.23-0.65-0.80HighEarly V2-0.09-0.470.290.64-0.09-0.80-0.95HighWait V10.02-0.090.140.770.02-0.40-0.95HighWait V20.08-0.110.280.410.08-0.65-0.95High
+Table S12. Sensitivity Analysis to Unmeasured Confounding in causal mediation analyses. CAMM mediation. Sensitivity analysis assessed robustness of mediation effects (CAP1<sub>DN-DM</sub> ? CAMM ? clinical outcomes) to unmeasured confounding using the method of Imai, Keele, & Yamamoto (2010). Definitions: ? = ACME point estimate (unstandardized indirect effect); CI = 95% bootstrap confidence interval (5000 iterations). P = Two-sided bootstrap p-value. CSIE = Completely Standardized Indirect Effect (effect size, computed as a × b from standardized paths)
+Threshold = ? value where ACME = 0 (nullification point), Critical = ? value where ACME becomes nonsignificant (CI crosses zero); Robustness = Categorical rating based on |Critical RHO|: High = |RHO| ? 0.20 (survives moderate confounding), Moderate = 0.10 ? |RHO < 0.20, Fragile = |RHO| < 0.10 Interpretation of RHO: It represents the residual correlation between mediator (CAMM) and outcome (BDI/STAI-T) required to eliminate the mediation effect, assuming no unmeasured confounding when RHO = 0. Larger |RHO| values indicate greater resilience to potential omitted variables. Benchmark: |RHO| = 0.1 (small confounder), 0.3 (moderate), 0.5 (large). Abbreviations: ACME = Average Causal Mediation Effect; BDI = Beck Depression Inventory; STAI-T = State-Trait Anxiety Inventory (Trait); CAP1<sub>DN-DM</sub> = dorsal-medial default mode brain co-activation pattern; CAMM = Child and Adolescent Mindfulness Measure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NormalityHeteroscedasticityVIFR²MediatorGroupVisitP (Path A)P (Path B)P (Path A)P (Path B)MaxPath APath BDHEA-SEarlyV1<0.001<0.0010.8290.5831.000.000.20EarlyV2<0.001<0. 0010.9320.7861.030.030.02WaitV1<0.001<0. 0010.3340.2591.000.000.02WaitV20.018<0.0010.003<0.0011.050.050.15CortisolEarlyV1<0. 001<0.0010.9440.4551.010.010.08EarlyV2<0.001<0. 0010.2950.5601.030.030.01WaitV10.025<0.0010.8240.0051.070.060.02WaitV20.015<0.0010.116<0.0011. 030.020.28TestosteroneEarlyV1<0.001<0.0010.2380.3271.020.020.13EarlyV2<0.001<0. 0010.0500.0161.020.020.13WaitV1<0.001<0. 0010.5940.0331.010.010.06WaitV2<0.001<0. 0010.5470.0021.000.000.11EstradiolEarlyV1<0.001<0. 0010.0260.5451.030.020.32EarlyV2<0.001<0. 0010.5900.0471.010.010.06WaitV1<0. 001<0.0010.6560.3471.010.010.09WaitV2<0.001<0. 0010.2730.0031.010.010.09
+Table S13. Hormonal mediation analyses. Model diagnostics for CAP1DN-DM ? Hormones ? Depression outcomes. Violations of normality (Shapiro-Wilk test, p < 0.05) and heteroscedasticity (Breusch-Pagan test, p < 0.05)  in the path models, in most of the models including hormonal markers as mediator (i.e., DHEA-S, cortisol, testosterone, estradiol). To address these violations, we computed heteroscedasticity-consistent (HC3) standard errors (Long & Ervin, 2000) and used bootstrap confidence intervals (5,000 iterations), ensuring validity of all reported indirect effects. Variance Inflation Factors (VIF) ranged from 1.00 to 1.07 across all models, indicating no multicollinearity concerns (all VIF < 2.0). R² values indicate the proportion of variance explained by each path model. Abbreviations: DHEA-S= Dehydroepiandrosterone Sulfate; VIF = Variance Inflation Factor; R² Path A = variance explained in mediator by predictor (CAP1 ? Mediator); R² Path B = variance explained in outcome by predictor and mediator (CAP1 + Mediator ? BDI).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ACMEPath aPath bMediatorGroupVisit?CILOWCIUPPCSIE?SEP?SEPDHEA-SEarlyV10.00-0.080.070.990.000.000.100.970.370.060.00EarlyV20.020.000.080.100.020.160.080.040.120.080.14WaitV10.00-0.030.030.890.00-0.030.120.820.100.100.32WaitV20.070.000.170.030.060.220.090.020.270.110.02CortisolEarlyV10.01-0.010.050.300.010.120.090.210.110.090.19EarlyV20.00-0.040.030.930.000.180.140.210.010.080.87WaitV10.01-0.060.080.810.010.250.090.010.050.170.78WaitV20.09-0.030.290.210.070.160.130.210.450.160.00TestosteroneEarlyV10.03-0.010.090.160.03-0.130.090.16-0.260.100.01EarlyV20.05-0.020.140.180.05-0.150.110.18-0.350.090.00WaitV1-0.02-0.060.020.38-0.020.090.100.35-0.210.090.03WaitV20.01-0.020.070.460.01-0.070.090.48-0.170.100.07EstradiolEarlyV10.08-0.030.200.160.080.160.120.200.510.080.00EarlyV2-0.02-0.120.020.32-0.02-0.100.100.310.230.150.12WaitV1-0.02-0.060.020.33-0.02-0.090.090.330.280.080.00WaitV20.01-0.020.040.390.010.110.110.310.100.080.20
+Table S14. Hormonal mediation analyses. Mediation Effects for CAP1DN-DM ? Hormones ? Depression outcomes.  Indirect effects (ACME) estimated using bias-corrected bootstrap (5,000 iterations) with case resampling, robust to heteroscedasticity and non-normality. Path coefficient standard errors computed using heteroscedasticity-consistent (HC3) estimators (Long & Ervin, 2000) to address violations documented in diagnostics (normality: 38/40 models, p < 0.05; heteroscedasticity: 18/40 models, p < 0.05). Completely Standardized Indirect Effects (CSIE; Preacher & Kelley, 2011) enable cross-mediator comparison: trivial < 0.01, small = 0.01-0.09, medium = 0.09-0.25, large > 0.25. Bootstrap confidence intervals are distribution-free and do not assume normality. HC3 robust p-values ensure valid inference under heteroscedasticity. ACME = Average Causal Mediation Effect (unstandardized indirect effect); CI = confidence interval; CSIE = Completely Standardized Indirect Effect; SE = standard error (HC3-corrected); p = HC3 robust p-value for path coefficients, bootstrap p-value for ACME.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+ACDETOTALMediatorGroupVisit?CILOWCIUPPP ?CILOWCIUPPPDHEA-SEarlyV10.250.060.420.010.250.040.450.02EarlyV20.09-0.170.360.540.11-0.160.390.45WaitV1-0.09-0.240.070.25-0.09-0.250.070.24WaitV20.26-0.020.570.070.330.010.690.04CortisolEarlyV10.240.030.430.020.250.040.450.02EarlyV20.10-0.170.410.450.11-0.160.390.45WaitV1-0.10-0.280.070.25-0.09-0.250.070.24WaitV20.25-0.010.490.060.330.010.690.04TestosteroneEarlyV10.220.010.410.040.250.040.450.02EarlyV20.05-0.200.320.680.11-0.160.390.45WaitV1-0.08-0.230.080.30-0.09-0.250.070.24WaitV20.320.010.660.040.330.010.690.04EstradiolEarlyV10.180.000.320.040.250.040.450.02EarlyV20.13-0.120.410.310.11-0.160.390.45WaitV1-0.07-0.230.090.33-0.09-0.250.070.24WaitV20.32-0.010.690.060.330.010.690.04
+Table S15. Hormonal mediation analyses. Direct and total effects for CAP1DN-DM ? Hormones ? Depression outcomes.  . Direct effects (ACDE) and total effects of brain CAP1DN-DM on depressive symptoms (BDI) across five potential mediators, estimated using robust methods. Direct effects represent CAP1DN-DM  ? BDI associations controlling for each mediator; total effects represent overall CAP1DN-DM  ? BDI associations. All confidence intervals computed via bias-corrected bootstrap (5,000 iterations), robust to violations of normality documented in Table S1. Standard errors for path coefficients computed using HC3 heteroscedasticity-consistent estimators (Long & Ervin, 2000). ACDE = Average Causal Mediation Effect (direct effect, ? = unstandardized regression coefficient); CI = 95% confidence interval (bootstrap); p = bootstrap p-value for ACDE and total effects. All estimates adjusted for heteroscedasticity using HC3 methods. Consistent total effects across mediators (within group/visit) confirm model stability. Abbreviations: DHEA-S = Dehydroepiandrosterone Sulfate.
+
+
+
+
+
+
+
+
+
+
+
+ACME ?)CSIE (?)PMediatorGroup?CILOWCIUPP?CILOWCIUPPBootstrapDHEA-SEarly0.02-0.100.080.02-0.090.090.52Wait0.07-0.080.120.060.070.090.30CortisolEarly-0.01-0.020.02-0.01-0.020.020.86Wait0.080.000.150.06-0.040.110.60TestosteroneEarly0.02-0.040.050.02-0.040.050.66Wait0.03-0.100.060.03-0.110.060.36EstradiolEarly-0.10-0.190.01-0.10-0.200.010.13Wait0.03-0.040.160.040.000.070.44
+Table S16. Hormonal mediation analyses. Longitudinal changes in hormones' indirect effects with paired-subjects bootstrap. Changes in indirect effects (? ACME = V2 - V1) are estimated with a paired-subjects bootstrap (5000 iterations), stratified by participant ID to account for within-person correlation. These changes reflect treatment effects in the Early group and natural evolution without intervention in the Wait group. Completely Standardized Indirect Effect changes (? CSIE) allow comparison across mediators regardless of measurement scale (Preacher & Kelley, 2011). Bootstrap confidence intervals are distribution-free and robust to violations of normality and heteroscedasticity documented in cross-sectional models (Table S1). P-values are calculated as twice the proportion of bootstrap replicates on the less probable side of zero, providing valid inference without parametric assumptions. ACME = Average Causal Mediation Effect (unstandardized indirect effect change); CSIE = Completely Standardized Indirect Effect (standardized effect size); CI = 95% bootstrap confidence interval; ? = longitudinal change (V2 - V1). Negative values indicate pathway weakening (therapeutic for depression outcomes); positive values indicate pathway strengthening (worsening without intervention). Bootstrap resampling stratified by participant ensures valid inference for paired data while maintaining robustness to violations of the assumptions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ACMERHOMediatorGroupVisit?PCSIE0riginalCritical?RobustnessDHEA-SEarlyV10.001.000.000.00-0.950.95Highly RobustEarlyV20.020.090.020.00-0.950.95Highly RobustWaitV10.000.890.000.00-0.950.95Highly RobustWaitV20.070.030.060.00-0.050.05FragileCortisolEarlyV10.010.300.010.00-0.950.95Highly RobustEarlyV20.000.950.000.00-0.950.95Highly RobustWaitV10.010.790.010.00-0.200.20ModerateWaitV20.090.190.070.00-0.950.95Highly RobustTestosteroneEarlyV10.030.140.030.00-0.950.95Highly RobustEarlyV20.050.170.050.00-0.950.95Highly RobustWaitV1-0.020.36-0.020.00-0.950.95Highly RobustWaitV20.010.470.010.00-0.950.95Highly RobustEstradiolEarlyV10.080.180.080.00-0.950.95Highly RobustEarlyV2-0.020.31-0.020.00-0.950.95Highly RobustWaitV1-0.020.31-0.020.00-0.950.95Highly RobustWaitV20.010.390.010.00-0.950.95Highly Robust
+
+Table S17. Hormonal mediation analyses. Sensitivity Analysis to Unmeasured Confounding. Hormonal mediation. Sensitivity analysis assessed robustness of mediation effects to unmeasured confounding using the sensitivity parameter RHO(Imai, Keele, & Yamamoto, 2010. The sensitivity parameter RHO represents the correlation between residuals of the mediator model (Path a: Brain CAP1DN-DM ? Hormone (DHEA-S, cortisol, testosterone, estradiol, respectively) and outcome model (Path b: CAMM ? Clinical outcomes [BDI, DASS-S , STAI-T, STAI-S], controlling for CAP1DN-DM ). Under the assumption of no unmeasured confounding, RHO = 0.00 (RHOORIGINAL). RHOCRITICAL indicates the magnitude of residual correlation required for the 95% confidence interval of the indirect effect to include zero (i.e., become nonsignificant). ? (Delta RHO) = |RHOCRITICAL – 0.00| quantifies robustness: larger values indicate greater resilience to unmeasured confounding. Abbreviations: DHEA-S= DHEA-S = Dehydroepiandrosterone Sulfate; ACME= Average Causal Mediation Effect (unstandardized indirect effect); ? = ACME point estimate; P= bootstrap p value (5000 iterations) for ACME; CSIE = Completely Standardized Indirect Effect (effect size for cross-mediator comparison; Preacher & Kelley, 2011); RHOORIGINAL= baseline residual correlation under no unmeasured confounding assumption (always 0. 00); RHOCRITICAL= residual correlation magnitude where confidence interval crosses zero; ? (Delta RHO) = robustness distance from baseline; Robustness = categorical classification based on ?: Fragile (? < 0. 1), Moderate (0. 1 ? ? < 0.2), Robust (0. 2 ? ? < 0.3), Highly Robust (? ? 0.3). 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2
+
+
