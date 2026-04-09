@@ -1,0 +1,305 @@
+# MINDFULTEEN: Statistical Analysis Methods for CAP-Clinical Relationships
+
+## Overview
+
+This document describes the statistical methods used to examine relationships between brain co-activation patterns (CAPs), mindfulness measures, hormonal biomarkers, and clinical symptoms in the MINDFULTEEN study. The analysis employed a three-stage sequential approach to test specific hypotheses about brain-behavior relationships and their underlying mechanisms.
+
+---
+
+## Study Design and Participants
+
+### Sample Characteristics
+- **N**: 48 adolescents (age range: 12-17 years)
+- **Design**: Longitudinal pre-post intervention with two groups
+  - Early group: Received intervention between V1 and V2
+  - Wait group: Control group (received intervention after V2)
+- **Assessment Points**: 
+  - V1: Baseline (pre-intervention)
+  - V2: Post-intervention follow-up
+
+### Measures
+- **Brain Imaging**: Co-activation patterns (CAPs) derived from resting-state fMRI
+- **Mindfulness**: Child and Adolescent Mindfulness Measure (CAMM)
+- **Clinical Symptoms**: Beck Depression Inventory (BDI), Depression Anxiety Stress Scales (DASS) subscales
+- **Hormonal Biomarkers**: DHEA-S, cortisol, testosterone, estradiol (saliva samples)
+
+---
+
+## Three-Stage Analytical Approach
+
+The analysis followed a sequential three-stage approach to comprehensively examine the mechanisms underlying brain-behavior relationships in adolescents following mindfulness intervention.
+
+### Stage 1: Brain-Behavior Correlations
+
+**Objective**: Examine direct associations between brain CAPs and clinical symptoms.
+
+**Method**: 
+- Pearson correlations were computed between temporal expression metrics of each identified CAP and clinical symptom measures (BDI scores, DASS subscales)
+- Correlations were examined separately at V1 and V2 for each group (Early, Wait)
+- False Discovery Rate (FDR) correction using the Benjamini-Hochberg procedure was applied to control for multiple comparisons
+- Significance threshold: α = 0.05 (FDR-corrected)
+
+**Research Question Addressed**: Do brain co-activation patterns show significant associations with clinical symptom severity?
+
+### Stage 2: CAMM Mediation Analysis (Figure 3)
+
+**Objective**: Test whether mindfulness (CAMM scores) mediates the relationship between brain CAPs and clinical symptoms.
+
+**Hypothesized Model**:
+```
+CAP Temporal Expression → CAMM → Clinical Symptoms
+```
+
+**Method**:
+- Causal mediation analysis following the potential outcomes framework (Imai et al., 2010)
+- Tested indirect effect of CAP expression on symptoms through CAMM (mediated pathway)
+- Estimated three components:
+  - Path a: CAP → CAMM (effect of brain patterns on mindfulness)
+  - Path b: CAMM → Symptoms (effect of mindfulness on symptoms, controlling for CAP)
+  - Indirect effect (ACME): a × b (Average Causal Mediation Effect)
+  - Direct effect (ACDE): CAP → Symptoms (controlling for CAMM)
+
+**Mediation Model Specification**:
+- Mediator model: CAMM = β₀ + β₁(CAP) + ε₁
+- Outcome model: Symptoms = γ₀ + γ₁(CAP) + γ₂(CAMM) + ε₂
+
+**Research Question Addressed**: Does mindfulness mediate the relationship between brain activity patterns and clinical symptom improvement?
+
+### Stage 3: Hormonal Mediation Analysis (NEW ANALYSIS)
+
+**Objective**: Assess whether hormonal measures mediate the relationship between brain CAPs and clinical symptoms.
+
+**Hypothesized Model**:
+```
+CAP Temporal Expression → Hormonal Biomarkers → Clinical Symptoms
+```
+
+**Method**:
+- Separate mediation analyses conducted for each hormonal biomarker as a potential mediator:
+  - DHEA-S (adrenal androgen precursor)
+  - Cortisol (HPA axis stress hormone)
+  - Testosterone (gonadal hormone)
+  - Estradiol (gonadal hormone)
+- Same mediation framework as Stage 2, but substituting hormonal measures as mediators
+- Tested whether hormonal changes explain the brain-behavior relationship
+
+**Mediation Model Specification**:
+- Mediator model: Hormone = β₀ + β₁(CAP) + ε₁
+- Outcome model: Symptoms = γ₀ + γ₁(CAP) + γ₂(Hormone) + ε₂
+
+**Research Question Addressed**: Do hormonal changes mediate the relationship between brain activity patterns and clinical symptoms in adolescents?
+
+---
+
+## Hybrid Approach for Dependent Data Structure
+
+### Rationale for Hybrid Design
+
+The MINDFULTEEN study employed a longitudinal design with repeated measures (V1 and V2) across two groups (Early and Wait), resulting in a dependent data structure. Traditional mediation approaches assume independent observations, which would be violated by analyzing all timepoints together. To address this challenge, we implemented a hybrid analytical approach.
+
+### Independent Models at Each Timepoint
+
+**Approach**:
+- Fitted separate, independent mediation models at each timepoint for each group:
+  - Early group V1 (baseline, pre-intervention)
+  - Early group V2 (post-intervention)
+  - Wait group V1 (baseline, control period)
+  - Wait group V2 (post-control, pre-intervention)
+- Each timepoint treated as independent cross-sectional analysis
+- This avoids violating independence assumptions within individual mediation models
+
+### Paired-Change Tests for Within-Subject Effects
+
+**Approach**:
+- After fitting independent models at each timepoint, we computed within-subject changes in mediation effects (V2 - V1)
+- Paired t-tests assessed whether indirect effects (ACME) and direct effects (ACDE) changed significantly from V1 to V2
+- Change scores calculated for each participant: Δ(Effect) = Effect_V2 - Effect_V1
+
+**Statistical Model**:
+```
+H₀: μ(Δ_ACME) = 0
+H₁: μ(Δ_ACME) ≠ 0
+```
+
+### Bootstrap Confidence Intervals for Change Scores
+
+**Method**:
+- Bootstrap resampling (5,000 iterations) applied to paired differences
+- Percentile method used to construct 95% confidence intervals for change in mediation effects
+- Bootstrap accounts for non-normality in difference distributions
+
+**Advantages of Hybrid Approach**:
+1. Preserves independence assumptions within each timepoint model
+2. Captures within-subject changes through paired comparisons
+3. Provides robust inference via bootstrap methods
+4. Appropriate for small to moderate sample sizes with repeated measures
+
+---
+
+## Analytical Tools and Statistical Methods
+
+### Bootstrap Resampling
+
+**Implementation**:
+- **Iterations**: 5,000 bootstrap resamples for all mediation analyses
+- **Purpose**: 
+  - Generate empirical sampling distributions for indirect effects
+  - Construct confidence intervals without assuming normality
+  - Provide significance tests for mediation effects
+- **Confidence Intervals**: 95% percentile method bootstrap CIs
+
+**Rationale**: Bootstrap methods are particularly appropriate for mediation analysis as the sampling distribution of indirect effects (a × b) is typically non-normal, even when individual path coefficients are normally distributed.
+
+### Robust Standard Errors
+
+**Implementation**:
+- **HC3 Estimator**: Heteroscedasticity-consistent standard errors using the HC3 correction (Davidson & MacKinnon, 1993)
+- **HC4 Estimator**: Alternative robust estimator for sensitivity analysis in models with high leverage observations
+- **Application**: Applied to all regression models (mediator and outcome models) to provide valid inference under heteroscedasticity
+
+**Rationale for HC3/HC4**:
+- Small sample size (n < 250) makes classical standard errors unreliable when heteroscedasticity is present
+- HC3 provides superior small-sample performance and conservative confidence interval coverage (Long & Ervin, 2000)
+- HC4 further protects against influential observations with high leverage
+
+### Completely Standardized Indirect Effects (CSIE)
+
+**Definition**:
+```
+CSIE = (a × b) / SD(Y)
+```
+
+Where:
+- a × b = unstandardized indirect effect
+- SD(Y) = standard deviation of the outcome variable
+
+**Purpose**:
+- Provides standardized effect size for indirect effects
+- Facilitates comparison of mediation strength across different mediators and outcomes
+- Interpretable as the standard deviation change in the outcome for a one-unit change in the predictor through the mediator
+
+**Interpretation Guidelines**:
+- Small: |CSIE| ≈ 0.01 - 0.09
+- Medium: |CSIE| ≈ 0.10 - 0.25
+- Large: |CSIE| > 0.25
+
+### Sensitivity Analysis
+
+**Approach**: Sensitivity analysis for violations of sequential ignorability assumption
+
+**Sequential Ignorability Assumption**:
+The key assumption for causal mediation is that the mediator is ignorable conditional on treatment and pre-treatment covariates. Violations occur when unmeasured confounders affect both the mediator and outcome.
+
+**Sensitivity Parameter (ρ)**:
+- ρ represents the correlation between residuals of the mediator and outcome models
+- ρ = 0: Sequential ignorability holds (no unmeasured confounding)
+- ρ ≠ 0: Presence of unmeasured confounding
+
+**Implementation**:
+- Examined how mediation effects (ACME) change across a range of ρ values (typically ρ = 0, 0.1, 0.2, ..., 0.6)
+- Assessed the robustness of significant mediation findings
+- Determined the critical value of ρ at which the mediation effect becomes non-significant
+
+**Interpretation**:
+- If significant mediation persists across a wide range of ρ values, findings are robust to potential unmeasured confounding
+- If mediation becomes non-significant at small ρ values, results should be interpreted cautiously
+
+### Multiple Testing Correction
+
+**Method**: Benjamini-Hochberg False Discovery Rate (FDR) control
+
+**Application**:
+- Applied to all p-values from mediation tests across multiple CAPs, mediators, and outcomes
+- Controls the expected proportion of false discoveries among rejected hypotheses
+- FDR level: α = 0.05
+
+**Rationale**: More powerful than Bonferroni correction while still controlling false positives in exploratory mediation analyses.
+
+### Software Implementation
+
+**R Packages**:
+- `mediation`: Causal mediation analysis with bootstrap inference
+- `boot`: Bootstrap resampling methods
+- `sandwich`: Robust covariance matrix estimation (HC3/HC4)
+- `lmtest`: Coefficient tests with robust standard errors
+- `car`: Variance Inflation Factor (VIF) for multicollinearity assessment
+
+**Reproducibility**:
+- Random seed set for all bootstrap procedures
+- Analysis scripts available upon request
+- Full model diagnostics conducted (normality, heteroscedasticity, multicollinearity, autocorrelation)
+
+---
+
+## Model Diagnostics
+
+### Assumption Testing
+
+For all regression models (mediator and outcome models), the following diagnostics were conducted:
+
+1. **Normality**: Shapiro-Wilk test for residual normality
+2. **Heteroscedasticity**: Breusch-Pagan test for constant variance
+3. **Multicollinearity**: Variance Inflation Factor (VIF < 5)
+4. **Autocorrelation**: Durbin-Watson test (within-subject correlation)
+5. **Outliers**: Studentized residuals (|residual| > 2.5 SD)
+
+### Remedial Measures
+
+When assumption violations were detected:
+- **Heteroscedasticity**: Applied HC3 robust standard errors
+- **Non-normality**: Used bootstrap confidence intervals
+- **Outliers**: Conducted sensitivity analyses with and without outliers
+
+**Note**: Even when diagnostics indicated no violations, HC3 standard errors were used consistently across all models for uniformity and conservative inference.
+
+---
+
+## Interpretation Framework
+
+### Mediation Effect Components
+
+For each mediation model, we report:
+
+1. **ACME (Average Causal Mediation Effect)**: The indirect effect of CAP on symptoms through the mediator (CAMM or hormone)
+2. **ACDE (Average Controlled Direct Effect)**: The direct effect of CAP on symptoms, controlling for the mediator
+3. **Total Effect**: ACME + ACDE (overall effect of CAP on symptoms)
+4. **Proportion Mediated**: ACME / Total Effect (percentage of total effect explained by mediation)
+
+### Significance Testing
+
+- Bootstrap 95% confidence intervals that exclude zero indicate significant effects
+- FDR-corrected p-values < 0.05 considered statistically significant
+- Both statistical and clinical significance considered in interpretation
+
+### Effect Size Interpretation
+
+- CSIE values interpreted alongside proportion mediated
+- Clinical significance assessed based on magnitude of symptom change and relevance to adolescent mental health
+
+---
+
+## Limitations
+
+1. **Within-Subjects Design**: Cannot fully establish temporal precedence between mediator and outcome at each timepoint
+2. **Single Mediators**: Each mediation model tests one mediator at a time; multiple mediation models could provide additional insights
+3. **Sample Size**: Limited power for detecting small indirect effects, particularly in subgroup analyses
+4. **Assumption Violations**: Some models showed heteroscedasticity and non-normality, mitigated through robust methods
+
+---
+
+## References
+
+- Benjamini, Y., & Hochberg, Y. (1995). Controlling the false discovery rate: A practical and powerful approach to multiple testing. *Journal of the Royal Statistical Society: Series B*, 57(1), 289-300.
+- Davidson, R., & MacKinnon, J. G. (1993). *Estimation and inference in econometrics*. Oxford University Press.
+- Hayes, A. F. (2018). *Introduction to mediation, moderation, and conditional process analysis* (2nd ed.). Guilford Press.
+- Imai, K., Keele, L., & Tingley, D. (2010). A general approach to causal mediation analysis. *Psychological Methods*, 15(4), 309-334.
+- Long, J. S., & Ervin, L. H. (2000). Using heteroscedasticity consistent standard errors in the linear regression model. *The American Statistician*, 54(3), 217-224.
+- MacKinnon, D. P. (2008). *Introduction to statistical mediation analysis*. Routledge.
+- Preacher, K. J., & Hayes, A. F. (2008). Asymptotic and resampling strategies for assessing and comparing indirect effects in multiple mediator models. *Behavior Research Methods*, 40(3), 879-891.
+
+---
+
+*Note*: Figure 3 (panel B) provides a visual representation of the mediation hypothesis structure tested in Stages 2 and 3.
+
+*Document prepared for MINDFULTEEN manuscript submission*
+*Last updated: December 2024*
